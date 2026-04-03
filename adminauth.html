@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accès Sécurisé | Admin Terminal</title>
+    <link rel="stylesheet" href="css/adminauth.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="login-overlay"></div>
+    
+    <div class="admin-auth-card">
+        <div class="auth-header">
+            <i class="fa-solid fa-key-skeleton"></i>
+            <h1>ADMIN<span>CORE</span></h1>
+            <p>Terminal de contrôle V1.0</p>
+        </div>
+
+        <form id="adminLoginForm">
+            <div class="input-field">
+                <label><i class="fa-solid fa-id-badge"></i> Matricule Admin</label>
+                <input type="text" id="adminID" placeholder="ADM-XXXX-2026" required>
+            </div>
+
+            <div class="input-field">
+                <label><i class="fa-solid fa-lock"></i> Code d'accès</label>
+                <input type="password" id="adminPassword" placeholder="••••••••" required>
+            </div>
+
+            <div class="input-field">
+                <label><i class="fa-solid fa-shield-halved"></i> Clé de Session (Optionnel)</label>
+                <input type="text" placeholder="RSA Token">
+            </div>
+
+            <button type="submit" class="btn-login">
+                <span>Authentification</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            <p>Accès restreint au personnel autorisé uniquement.</p>
+            <p class="ip-address">IP: <span id="user-ip">192.168.1.105</span></p>
+        </div>
+    </div>
+
+    <script src="js/adminauth.js"></script>
+</body>
+</html>

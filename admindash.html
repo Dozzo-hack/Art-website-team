@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Central | CamerArt Control</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="admin-container">
+        <nav class="admin-sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-shield-halved"></i> <span>ADMIN<span>CORE</span></span>
+            </div>
+            <ul class="admin-menu">
+                <li class="active" onclick="showSection('overview')"><i class="fa-solid fa-gauge"></i> Tableau de bord</li>
+                <li onclick="showSection('users')"><i class="fa-solid fa-users-gear"></i> Utilisateurs</li>
+                <li onclick="showSection('products')"><i class="fa-solid fa-box-open"></i> Catalogue Produits</li>
+                <li onclick="showSection('approvals')"><i class="fa-solid fa-circle-check"></i> Approbations <span class="badge-notif">3</span></li>
+                <li onclick="showSection('finance')"><i class="fa-solid fa-money-bill-trend-up"></i> Finances</li>
+            </ul>
+            <div class="sidebar-bottom">
+                <a href="index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sortir</a>
+            </div>
+        </nav>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <div class="search-box">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Rechercher une transaction, un ID...">
+                </div>
+                <div class="admin-profile">
+                    <span class="status-indicator"></span>
+                    <p>Super Admin</p>
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=e58e26&color=fff" alt="Admin">
+                </div>
+            </header>
+
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-info"><h3>5.2M FCFA</h3><p>Revenus Mensuels</p></div>
+                    <i class="fa-solid fa-chart-line color-1"></i>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-info"><h3>1,240</h3><p>Utilisateurs Actifs</p></div>
+                    <i class="fa-solid fa-user-group color-2"></i>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-info"><h3>158</h3><p>Ventes ce mois</p></div>
+                    <i class="fa-solid fa-bag-shopping color-3"></i>
+                </div>
+            </div>
+
+            <section class="admin-content" id="main-view">
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>Dernières Activités</h3>
+                        <button class="btn-export">Exporter CSV</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Utilisateur</th>
+                                <th>Rôle</th>
+                                <th>Action</th>
+                                <th>Date</th>
+                                <th>Statut</th>
+                            </tr>
+                        </thead>
+                        <tbody id="activity-log">
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

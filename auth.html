@@ -1,1 +1,79 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejoindre la Communauté | CamerArt</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="auth-body">
+
+    <div class="auth-container">
+        <div class="auth-visual">
+            <div class="visual-overlay">
+                <h2>L'art camerounais vous attend.</h2>
+                <p>Connectez-vous pour soutenir nos talents locaux ou exposez vos propres créations au monde entier.</p>
+            </div>
+        </div>
+
+        <div class="auth-form-box">
+            <div class="form-toggle">
+                <button id="login-btn" class="active">Connexion</button>
+                <button id="register-btn">Inscription</button>
+            </div>
+
+            <form id="login-form" class="auth-form active-form">
+                <h3>Bon retour !</h3>
+                <div class="input-group">
+                    <label>Nom d'utilisateur</label>
+                    <input type="text" placeholder="Ex: art_lover237" required>
+                </div>
+                <div class="input-group">
+                    <label>Mot de passe</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-submit">Se connecter</button>
+                <a href="#" class="forgot-pw">Mot de passe oublié ?</a>
+            </form>
+
+            <form id="register-form" class="auth-form">
+                <h3>Créer un compte</h3>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Nom Complet</label>
+                        <input type="text" placeholder="John Doe" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Username</label>
+                        <input type="text" placeholder="john_art" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="contact@exemple.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Mot de passe</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                <div class="input-group">
+                    <label>Je suis un :</label>
+                    <div class="role-selector">
+                        <input type="radio" name="role" id="client" value="client" checked>
+                        <label for="client"><i class="fa-solid fa-cart-shopping"></i> Acheteur</label>
+                        
+                        <input type="radio" name="role" id="artist" value="artist">
+                        <label for="artist"><i class="fa-solid fa-palette"></i> Artiste</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit">Créer mon compte</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

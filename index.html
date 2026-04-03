@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CamerArt | Marketplace d'Excellence</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">CAMER<span>ART</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#shop">Boutique</a></li>
+            <li><a href="#blog">Blog Culturel</a></li>
+            <li><a href="#artists">Artistes</a></li>
+        </ul>
+        <div class="nav-icons">
+            <div class="search-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div class="user-menu">
+                <i class="fa-regular fa-circle-user" onclick="toggleUserDashboard()"></i>
+                <div class="user-dropdown" id="userDropdown">
+                    <p class="user-name">Chargement...</p>
+                    <hr>
+                    <a href="#" onclick="openSettings()"><i class="fa-solid fa-gear"></i> Paramètres</a>
+                    <a href="#"><i class="fa-solid fa-heart"></i> Favoris</a>
+                    <a href="auth.html" class="logout-btn"><i class="fa-solid fa-sign-out"></i> Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <span class="badge">Patrimoine du Cameroun</span>
+            <h1>L'Art de nos Terres, <br>Livré chez Vous.</h1>
+            <p>La première plateforme dédiée à la promotion et à la vente des chefs-d'œuvre de l'art camerounais.</p>
+            <div class="hero-btns">
+                <a href="#shop" class="btn-primary">Acheter Maintenant</a>
+                <a href="#blog" class="btn-secondary">Découvrir l'Histoire</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="shop-section" id="shop">
+        <div class="section-header">
+            <h2 class="section-title">Marché de l'Art</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="Sculpture">Sculptures</button>
+                <button class="filter-btn" data-filter="Peinture">Peintures</button>
+                <button class="filter-btn" data-filter="Digital">Digital Art</button>
+            </div>
+        </div>
+        <div class="product-grid" id="product-display">
+            </div>
+    </section>
+
+    <section class="blog-section" id="blog">
+        <h2 class="section-title">Espace Culturel</h2>
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1523891707568-756bb0aca0f0?q=80&w=800');"></div>
+                <div class="blog-content">
+                    <span class="tag">Histoire</span>
+                    <h3>Les Bronzes de Foumban : Un secret millénaire</h3>
+                    <p>Découvrez comment les artisans du Noun perpétuent la technique de la cire perdue...</p>
+                    <a href="#" class="read-more">Lire l'article</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800');"></div>
+                <div class="blog-content">
+                    <span class="tag">Portrait</span>
+                    <h3>Awa Ndongo : La nouvelle vague du Digital Art</h3>
+                    <p>Rencontre avec l'artiste qui fusionne les motifs traditionnels Sawa et l'art numérique.</p>
+                    <a href="#" class="read-more">Lire l'article</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSettings()">&times;</span>
+            <h2>Paramètres du Compte</h2>
+            <form class="settings-form">
+                <div class="input-group">
+                    <label>Nom Complet</label>
+                    <input type="text" value="Utilisateur Démo">
+                </div>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" value="demo@camerart.cm">
+                </div>
+                <div class="input-group">
+                    <label>Changer le Mot de Passe</label>
+                    <input type="password" placeholder="Nouveau mot de passe">
+                </div>
+                <div class="input-group">
+                    <label>Devise Préférée</label>
+                    <select>
+                        <option>FCFA (XAF)</option>
+                        <option>Euro (€)</option>
+                        <option>Dollar ($)</option>
+                    </select>
+                </div>
+                <button type="button" class="btn-primary">Enregistrer les modifications</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">CAMER<span>ART</span></div>
+            <p>Promouvoir l'excellence artistique du Cameroun à l'échelle mondiale.</p>
+        </div>
+        <hr>
+        <p class="copy">&copy; 2026 Cameroon Art Marketplace. Tous droits réservés.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
