@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="welcome-text">
+            <h2>Inscripion</h2>
+            <P>Veuillez entrer vos informations</P>
+        </div>
+        <form  class="login-box">
+
+
+            <h2>Inscription</h2>
+            <div class="input-box">
+                <i class="fa-solid fa-user icon"></i>
+                <input type="text" placeholder="Username" name="username" required>
+                <label>Username</label>
+            </div>
+
+            <div class="input-box">
+                <i class="fa-solid fa-envelope icon"></i>
+                <input type="text" placeholder="Email" name="email" required>
+                <label>Email</label>
+            </div>
+
+
+            <div class="input-box">
+                <i class="fa-solid fa-user-tie icon"></i>
+                <select name="grade" placeholder="statut" required>
+
+                    <option value="Client" name="statut">Client</option>
+                    <option value="Artiste" name="statut">Artiste</option>
+                </select>
+
+            </div>
+
+            <div class="input-box">
+                <i class="fa-solid fa-lock icon"></i>
+                <input type="password" placeholder="Password" name="password" required>
+                <label>Password</label>
+            </div>
+            <button type="submit" class="login-button">S'inscrire</button>
+            <div class="register-link">
+                <p> Vous avez déjà un compte?
+                    <a href="login.php">Connectez-Vous</a>
+                </p>
+
+            </div>
+
+
+        </form>
+
+    </div>
+   
+</body>
+
+</html>
