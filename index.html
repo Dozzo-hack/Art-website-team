@@ -16,7 +16,7 @@
             <li><a href="#home">Accueil</a></li>
             <li><a href="#shop">Boutique</a></li>
             <li><a href="#blog">Blog Culturel</a></li>
-            <li><a href="#artists">Artistes</a></li>
+            <li><a href="#artists">Communauté</a></li>
         </ul>
         <div class="nav-icons">
             <div class="search-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
@@ -27,7 +27,7 @@
             <div class="user-menu">
                 <i class="fa-regular fa-circle-user" onclick="toggleUserDashboard()"></i>
                 <div class="user-dropdown" id="userDropdown">
-                    <p class="user-name">Chargement...</p>
+                    <p class="user-name">Visiteur</p>
                     <hr>
                     <a href="#" onclick="openSettings()"><i class="fa-solid fa-gear"></i> Paramètres</a>
                     <a href="#"><i class="fa-solid fa-heart"></i> Favoris</a>
@@ -56,74 +56,164 @@
                 <button class="filter-btn active" data-filter="all">Tous</button>
                 <button class="filter-btn" data-filter="Sculpture">Sculptures</button>
                 <button class="filter-btn" data-filter="Peinture">Peintures</button>
-                <button class="filter-btn" data-filter="Digital">Digital Art</button>
+                <button class="filter-btn" data-filter="Digital Art">Digital Art</button>
             </div>
         </div>
         <div class="product-grid" id="product-display">
             </div>
     </section>
 
-    <section class="blog-section" id="blog">
-        <h2 class="section-title">Espace Culturel</h2>
-        <div class="blog-grid">
-            <article class="blog-card">
-                <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1523891707568-756bb0aca0f0?q=80&w=800');"></div>
-                <div class="blog-content">
-                    <span class="tag">Histoire</span>
-                    <h3>Les Bronzes de Foumban : Un secret millénaire</h3>
-                    <p>Découvrez comment les artisans du Noun perpétuent la technique de la cire perdue...</p>
-                    <a href="#" class="read-more">Lire l'article</a>
-                </div>
-            </article>
-            <article class="blog-card">
-                <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800');"></div>
-                <div class="blog-content">
-                    <span class="tag">Portrait</span>
-                    <h3>Awa Ndongo : La nouvelle vague du Digital Art</h3>
-                    <p>Rencontre avec l'artiste qui fusionne les motifs traditionnels Sawa et l'art numérique.</p>
-                    <a href="#" class="read-more">Lire l'article</a>
-                </div>
-            </article>
+    <section class="artists-section" id="artists">
+        <h2 class="section-title">Nos Maîtres Artisans</h2>
+        <div class="announcements-ticker">
+            <div class="ticker-content">
+                <span><i class="fa-solid fa-bullhorn"></i> <strong>Awa Ndongo :</strong> Vernissage en direct ce samedi à Douala.</span>
+                <span><i class="fa-solid fa-bullhorn"></i> <strong>Moussa F. :</strong> Nouvelles sculptures en bronze disponibles.</span>
+            </div>
         </div>
+        <div class="artists-grid" id="artists-list">
+            </div>
     </section>
 
-    <div id="settingsModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeSettings()">&times;</span>
-            <h2>Paramètres du Compte</h2>
-            <form class="settings-form">
-                <div class="input-group">
-                    <label>Nom Complet</label>
-                    <input type="text" value="Utilisateur Démo">
+    <div id="productModal" class="modal">
+        <div class="product-modal-view">
+            <span class="close" onclick="closeProductModal()">&times;</span>
+            <div class="product-layout">
+                <div class="product-gallery">
+                    <img src="" id="modal-img" alt="Oeuvre">
+                    <div class="badge-overlay">Certifié Original</div>
                 </div>
-                <div class="input-group">
-                    <label>Email</label>
-                    <input type="email" value="demo@camerart.cm">
+                <div class="product-info-panel">
+                    <p class="category-path">Boutique > <span id="modal-cat">Catégorie</span></p>
+                    <h2 id="modal-title">Nom de l'œuvre</h2>
+                    <p style="margin-top: -15px; color: var(--accent); font-weight: 600;">Par <span id="modal-artist">Artiste</span></p>
+                    
+                    <div class="rating-box" id="modal-stars" style="color: #f1c40f;">
+                        </div>
+                    <hr>
+                    <div class="price-display">
+                        <span class="value" id="modal-price">0</span>
+                        <span class="currency">FCFA</span>
+                    </div>
+                    <div class="stock-info" id="modal-stock">
+                        <i class="fa-solid fa-boxes-stacked"></i> <span>En stock</span>
+                    </div>
+                    <div class="description-scroll">
+                        <h3>À propos de cette pièce</h3>
+                        <p id="modal-desc">Description...</p>
+                    </div>
+                    <div class="action-bar">
+                        <div class="qty-box">
+                            <label>Quantité</label>
+                            <select id="modal-qty">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <button class="btn-buy" onclick="addToCartFromModal()">Ajouter au panier</button>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label>Changer le Mot de Passe</label>
-                    <input type="password" placeholder="Nouveau mot de passe">
-                </div>
-                <div class="input-group">
-                    <label>Devise Préférée</label>
-                    <select>
-                        <option>FCFA (XAF)</option>
-                        <option>Euro (€)</option>
-                        <option>Dollar ($)</option>
-                    </select>
-                </div>
-                <button type="button" class="btn-primary">Enregistrer les modifications</button>
-            </form>
+            </div>
         </div>
     </div>
 
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-full">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <div class="cart-container">
+                <div class="cart-main">
+                    <h2>Mon Panier <span id="items-count-text">(0 articles)</span></h2>
+                    <div id="cart-items-container" class="cart-items-scroll">
+                        </div>
+                </div>
+                <div class="cart-sidebar">
+                    <h3>Détails du paiement</h3>
+                    <div class="bill-line" style="display:flex; justify-content:space-between;">
+                        <span>Sous-total</span><span id="subtotal">0 FCFA</span>
+                    </div>
+                    <div class="bill-line" style="display:flex; justify-content:space-between;">
+                        <span>Livraison</span><span style="color:green;">Gratuit</span>
+                    </div>
+                    <hr>
+                    <div class="bill-line total" style="display:flex; justify-content:space-between; font-weight:bold; font-size:1.2rem;">
+                        <span>Total</span><span id="cart-total-price">0 FCFA</span>
+                    </div>
+                    
+                    <div class="payment-methods" style="margin-top:20px;">
+                        <p>Choisir votre opérateur :</p>
+                        <div class="method-grid">
+                            <label class="pay-btn">
+                                <input type="radio" name="pay" checked>
+                                <img src='../assets/ui/logo_orange.png' width="30">
+                                <span>Orange</span>
+                            </label>
+                            <label class="pay-btn">
+                                <input type="radio" name="pay">
+                                <img src='../assets/ui/logo_mtn.png' width="30">
+                                <span>MTN</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="btn-pay-now" style="width:100%; margin-top:20px;">Payer en toute sécurité</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="blog-section" id="blog">
+
+        <h2 class="section-title">Espace Culturel</h2>
+
+        <div class="blog-grid">
+
+            <article class="blog-card">
+
+                <div class="blog-img" style="background-image: url('../assets/artworks/img2_blog.png');"></div>
+
+                <div class="blog-content">
+
+                    <span class="tag">Histoire</span>
+
+                    <h3>Les Bronzes de Foumban : Un secret millénaire</h3>
+
+                    <p>Découvrez comment les artisans du Noun perpétuent la technique de la cire perdue...</p>
+
+                    <a href="#" class="read-more">Lire l'article</a>
+
+                </div>
+
+            </article>
+
+            <article class="blog-card">
+
+                <div class="blog-img" style="background-image: url('../assets/artworks/img1_blog.png');"></div>
+
+                <div class="blog-content">
+
+                    <span class="tag">Portrait</span>
+
+                    <h3>Awa Ndongo : La nouvelle vague du Digital Art</h3>
+
+                    <p>Rencontre avec l'artiste qui fusionne les motifs traditionnels Sawa et l'art numérique.</p>
+
+                    <a href="#" class="read-more">Lire l'article</a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
     <footer>
-        <div class="footer-content">
+        <div class="footer-content" style="text-align:center; padding: 40px 0;">
             <div class="footer-logo">CAMER<span>ART</span></div>
             <p>Promouvoir l'excellence artistique du Cameroun à l'échelle mondiale.</p>
         </div>
         <hr>
-        <p class="copy">&copy; 2026 Cameroon Art Marketplace. Tous droits réservés.</p>
+        <p class="copy" style="text-align:center; padding: 20px 0;">&copy; 2026 Cameroon Art Marketplace. Tous droits réservés.</p>
     </footer>
 
     <script src="js/script.js"></script>
